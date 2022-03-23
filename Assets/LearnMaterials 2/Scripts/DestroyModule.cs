@@ -4,7 +4,13 @@ using UnityEngine;
 [HelpURL("https://docs.google.com/document/d/1RMamVxE-yUpSfsPD_dEa4-Ak1qu6NTo83qY1O4XLxUY/edit?usp=sharing")]
 public class DestroyModule : MonoBehaviour
 {
+    [HeaderAttribute("Модуль")]
+    [SerializeField]
+    private bool debug;
+    [SerializeField]
     private float destroyDelay;
+    [SerializeField]
+    [Min(1)]
     private int minimalDestroyingObjectsCount;
 
     private Transform myTransform;
@@ -12,6 +18,11 @@ public class DestroyModule : MonoBehaviour
     private void Awake()
     {
         myTransform = transform;
+
+        if (debug == true)
+        {
+            ActivateModule();
+        }
     }
 
     public void ActivateModule()
