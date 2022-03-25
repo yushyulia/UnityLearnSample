@@ -6,6 +6,12 @@ using UnityEngine;
 [HelpURL("https://docs.google.com/document/d/1Cmm__cbik5J8aHAI6PPaAUmEMF3wAcNo3rpgzsYPzDM/edit?usp=sharing")]
 public class TransparentModule : MonoBehaviour
 {
+    [Header("Модуль")]
+    [SerializeField]
+    private bool debug;
+
+    [SerializeField]
+    [Min(1)]
     private float changeSpeed;
 
     private float defaultAlpha;
@@ -17,8 +23,12 @@ public class TransparentModule : MonoBehaviour
         mat = GetComponent<Renderer>().material;
         defaultAlpha = mat.color.a;
         toDefault = false;
-    }
 
+        if (debug == true)
+        {
+            ActivateModule();
+        }
+    }
     public void ActivateModule()
     {
         float target = toDefault ? defaultAlpha : 0;
