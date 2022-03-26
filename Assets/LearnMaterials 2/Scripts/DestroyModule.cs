@@ -8,6 +8,7 @@ public class DestroyModule : MonoBehaviour
     [SerializeField]
     private bool debug;
     [SerializeField]
+    [Min(0)]
     private float destroyDelay;
     [SerializeField]
     [Min(1)]
