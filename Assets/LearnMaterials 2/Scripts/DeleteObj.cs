@@ -7,6 +7,7 @@ public class DeleteObj : SampleScript
     public Transform target;
     private bool check;
     private Vector3 scaleChange = new Vector3(-0.01f, -0.01f, -0.01f);
+
     [ContextMenu("Delete")]
     public override void Use()
     {
@@ -23,13 +24,6 @@ public class DeleteObj : SampleScript
             Destroy(target.gameObject);
             check = false;
         }
-        
-    }
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
         
     }
 

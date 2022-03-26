@@ -4,26 +4,25 @@ using UnityEngine;
 
 public class Rotation : SampleScript
 {
+    private bool check;
     public Transform obj;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private float y = 90f;
+    private float speed = 10f;
 
     // Update is called once per frame
     void Update()
     {
-        ChangeRotation();
+        if (check)
+        {
+            ChangeRotation();
+        }
     }
 
     public override void Use()
     {
-
+        check = !check;
     }
 
-    private float y = 90f;
-    private float speed = 10f;
     public void ChangeRotation()
     {
         y += Time.deltaTime * speed;

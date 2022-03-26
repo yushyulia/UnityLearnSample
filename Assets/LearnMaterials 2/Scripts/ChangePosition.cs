@@ -4,26 +4,24 @@ using UnityEngine;
 
 public class ChangePosition : SampleScript
 {
+    private bool check;
     public Transform obj;
     private Vector3 second = new Vector3(3, 0, 0);
     private float speed = 1f;
 
-    void Start()
-    {
-
-    }
-
     // Update is called once per frame
     void Update()
     {
-        Moving();
+        if (check)
+        {
+            Moving();
+        }
+        
     }
 
-
-    [SerializeField]
     public override void Use()
     {
-        Start();
+        check = true;
     }
 
     private void Moving()
